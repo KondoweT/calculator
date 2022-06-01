@@ -1,3 +1,8 @@
+const img = document.querySelector('img')
+img.ondragstart = () => {
+  return false;
+};
+
 function add(a,b){
     return a + b;
 }
