@@ -84,10 +84,11 @@ body{
     background-color: #d3e3fd;
 }
 
-.kb{
+/* .kb{
     position: relative;
     bottom: 3px;
-}
+    font-size: 13pt;
+} */
 
 .btn:hover{
     background-color: #7d8186;
@@ -102,3 +103,9 @@ p{
 .results .operations{
     direction: rtl;
 }
+
+.btn.operate.btn.equal{
+    width: 650%;
+    border-radius: 25px;
+}
+
