@@ -40,6 +40,15 @@ body{
     width: 100%;
 }
 
+button {
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
 .btn{
     width: 250%;
     height: 250%;
@@ -113,4 +122,8 @@ p{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+
+.bigfont{
+    font-weight: 700;
 }
