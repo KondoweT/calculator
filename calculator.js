@@ -48,3 +48,12 @@ changeButtonSize.forEach(item=>{
         item.style.borderRadius = '50%';
       })
 });
+
+const equal = document.querySelector('.equal');
+equal.addEventListener('mousedown', function color() {
+    equal.style.backgroundColor = '#42b1b1';
+})
+
+equal.addEventListener('mouseup', function color() {
+    equal.style.backgroundColor = '#d3e3fd';
+})
