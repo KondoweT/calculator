@@ -36,3 +36,15 @@ function operator(a,b,ope){
     }
 }
 
+const changeButtonSize = document.querySelectorAll('.size');
+changeButtonSize.forEach(item=>{
+    item.addEventListener('mousedown', function onClick() {
+        item.style.borderRadius = '25px';
+      })
+});
+
+changeButtonSize.forEach(item=>{
+    item.addEventListener('mouseup', function onClick() {
+        item.style.borderRadius = '50%';
+      })
+});
