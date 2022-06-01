@@ -12,6 +12,16 @@ body{
     justify-content: center;
 }
 
+.operations{
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.results{
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
 .outline{
     border: 5px solid black;
     border-radius: 1em;
@@ -104,12 +114,17 @@ button {
 }
 
 p{
-    font-size: 2em;
+    font-size: 1.5em;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
-.results .operations{
+.results {
+    direction: rtl;
+}
+
+.operations{
     direction: rtl;
 }
 
@@ -124,6 +139,11 @@ p{
     align-items: flex-end;
 }
 
-.bigfont{
+
+
+.bigFont{
     font-weight: 700;
+    font-size: 2.1em;
+    word-wrap: break-word;
+    white-space: pre-line;
 }
