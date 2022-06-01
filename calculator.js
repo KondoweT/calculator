@@ -14,6 +14,14 @@ function divide(a,b){
     return a/b;
 }
 
+function percentage(a){
+    return a/100;
+}
+
+function operator(a){
+    return percentage(a);
+}
+
 function operator(a,b,ope){
     if(ope === '/'){
         return divide(a,b);
@@ -27,3 +35,4 @@ function operator(a,b,ope){
         return 'MATH ERROR';
     }
 }
+
