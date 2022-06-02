@@ -72,15 +72,15 @@ let op1 = '';
 numbers.forEach(num =>{
     num.addEventListener('click', function(){
         let text = num.id;
-        if(text === '.'){
+        if(!(text === '.')){
+           op1 += text;
+        }else{
             let result = op1.indexOf('.');
             if(result < 0){
                 op1 += text;    
             }
-        }else{
-            op1 += text;
         }
-        numb.textContent = op1;
+        numb.textContent = Number(op1);
         operations.appendChild(numb)
         console.log(op1);
     })
