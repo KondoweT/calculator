@@ -25,35 +25,33 @@ equal.addEventListener('mouseup', function color() {
 
 // functions the working of the calculator below
 
-function add(a,b){
+let add = function (a,b){
     return a + b;
 }
 
-function subtract(a,b){
+let subtract = function (a,b){
     return a -b;
 }
 
-function multipy(a,b){
+let multipy = function (a,b){
     return a * b;
 }
 
-function divide(a,b){
+let divide = function (a,b){
     return a/b;
 }
 
-function percentage(a){
+let percentage = function (a){
     return a/100;
 }
 
-function operator(a){
-    return percentage(a);
-}
-
-function operator(a,b,ope){
-    if(ope === '/'){
+let operate = function (a,ope,b){
+    if(!(b)){
+        return percentage(a);
+    }else if(ope === '/'){
         return divide(a,b);
     }else if(ope === '+'){
-        return sum(a,b);
+        return add(a,b);
     }else if(ope === '-'){
         return subtract(a,b)
     }else if(ope === '*'){
@@ -63,26 +61,30 @@ function operator(a,b,ope){
     }
 }
 
-const numbers = document.querySelectorAll('.num');
-const operations = document.querySelector('.operations');
-const numb = document.createElement('div');
-numb.classList.add('bigFont');
+const bigF = document.querySelector('.bigFont');
+const smallF = document.querySelector('.smallFont');
+let numbers = document.querySelectorAll('.num');
 
-let op1 = '';
-numbers.forEach(num =>{
-    num.addEventListener('click', function(){
-        let text = num.id;
+let operand = '';
+let num1, num2, ope;
+
+let input = function(number){
+    number.addEventListener('click',()=>{
+        let text = number.id;
         if(!(text === '.')){
-           op1 += text;
-        }else{
-            let result = op1.indexOf('.');
-            if(result < 0){
-                op1 += text;    
-            }
+            operand += text;
+         }else{
+             let result = operand.indexOf('.');
+             if(result < 0){
+                 operand += text;    
+             }
+         }
+         if(operand.length > 17) {
+            operand = operand.substring(0, 17);
         }
-        numb.textContent = Number(op1);
-        operations.appendChild(numb)
-        console.log(op1);
-    })
-});
+         console.log(operand);
+    });
+}
+
+numbers.forEach(input);
 
