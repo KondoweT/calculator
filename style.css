@@ -65,7 +65,7 @@ button {
     font-size: 2em;
     padding: 1rem;
     margin:0 auto;
-    border-radius: 50%;
+    border-radius: 10%;
     background-color: #eaf0fb;
     margin: 0.1em;
     text-align: center;
@@ -120,13 +120,10 @@ p{
     width: 100%;
 }
 
-/* .results {
-    direction: ltr;
-}
 
 .operations{
-    
-} */
+    direction: rtl;
+}
 
 .btn.operate.btn.equal{
     width: 650%;
@@ -143,7 +140,8 @@ p{
 
 .bigFont{
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 1.7em;
     word-wrap: break-word;
     white-space: pre-line;
+    /* direction: rtl; */
 }
