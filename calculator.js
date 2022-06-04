@@ -93,8 +93,8 @@ let getOperand = function(operand, text){
              operand += text;    
          }
      }
-     if(operand.length > 12) {
-        return operand.substring(0, 12);
+     if(operand.length > 14) {
+        return operand.substring(0, 14);
     }else{
         return operand
     }
