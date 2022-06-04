@@ -1,4 +1,4 @@
-// functions for the visual appearance of the calculator button
+// functions for the visual appearance of the calculator buttons
 
 const changeButtonSize = document.querySelectorAll('.size');
 changeButtonSize.forEach(item=>{
@@ -26,11 +26,11 @@ equal.addEventListener('mouseup', function color() {
 // functions the working of the calculator below
 
 let add = function (a,b){
-    return a + b;
+    return Number(a) + Number(b);
 }
 
 let subtract = function (a,b){
-    return a -b;
+    return Number(a) -Number(b);
 }
 
 let multipy = function (a,b){
@@ -64,27 +64,81 @@ let operate = function (a,ope,b){
 const bigF = document.querySelector('.bigFont');
 const smallF = document.querySelector('.smallFont');
 let numbers = document.querySelectorAll('.num');
+let operators = document.querySelectorAll('.operate');
 
 let operand = '';
-let num1, num2, ope;
+let operand1 = '';
+let num1, ope, num2, result;
+
+let getOperand = function(operand, text){
+    if(!(text === '.')){
+        operand += text;
+     }else{
+         let result = operand.indexOf('.');
+         if(result < 0){
+             operand += text;    
+         }
+     }
+     if(operand.length > 17) {
+        return operand.substring(0, 17);
+    }else{
+        return operand
+    }
+}
+
+let manipulating = function(nm1, oper, nm2, manipulator){
+    if(nm1 && oper && nm2){
+        result = operate(nm1, oper, nm2);
+        // smallF.textContent = `${num1} ${ope} ${num2}`;
+        num1 = result, operand1 = '', ope = manipulator;
+        bigF.textContent = `${result} ${ope}`;
+    }else if(nm1 && !(oper) && !(nm2)){
+        ope = manipulator;
+        bigF.textContent = `${num1} ${ope}`;
+    }
+}
 
 let input = function(number){
     number.addEventListener('click',()=>{
         let text = number.id;
-        if(!(text === '.')){
-            operand += text;
-         }else{
-             let result = operand.indexOf('.');
-             if(result < 0){
-                 operand += text;    
-             }
+         if(!(num1 && ope)){
+            operand = getOperand(operand, text);
+             num1 = Number(operand);
+             bigF.textContent = num1;
+         }else if(num1 && ope){
+             operand1 = getOperand(operand1, text);
+             num2 = Number(operand1);
+             bigF.textContent = `${num1} ${ope} ${num2}`;
          }
-         if(operand.length > 17) {
-            operand = operand.substring(0, 17);
+    });
+}
+
+let manipulate = function(operator){
+    operator.addEventListener('click', ()=>{
+        let manipulator = operator.id;
+        let n1 = num1;
+        let n2 = num2;
+        let op = ope;
+        if(manipulator === '+'){
+            manipulating(n1,op,n2,manipulator);                    
+        }else if(manipulator === '-'){
+            manipulating(n1,op,n2,manipulator);
+        }else if(manipulator === '*'){
+            manipulating(n1,op,n2,manipulator);
+        }else if(manipulator === '/'){
+            manipulating(n1,op,n2,manipulator);
+        }else if(manipulator === '%'){
+            if(n1){
+                result = percentage(n1);
+                num1 = result;
+                bigF.textContent = result;
+            }
         }
-         console.log(operand);
+
+        
     });
 }
 
 numbers.forEach(input);
+operators.forEach(manipulate);
 
