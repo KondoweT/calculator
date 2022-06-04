@@ -137,7 +137,7 @@ p{
 
 
 .bigFont{
-    font-weight: 700;
+   /* font-weight: 700;*/
     font-size: 2em;
     word-wrap: break-word;
     white-space: pre-line;
