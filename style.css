@@ -7,12 +7,20 @@
 
 body{
     background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 32%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);    
+}
+main{
+    width: 28em;
+    height: 40em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1em;
-    padding-top: 1em;
 }
 
 .operations{
@@ -29,13 +37,11 @@ body{
     border: 5px solid black;
     border-radius: 1em;
     width: 25em;
-    height: 38em;
-    /* position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%); */
+    height: 37.6em;
     padding: 0.3em;
 }
+
+
 .screen{
     border: 5px solid black;
     border-radius: 0.5em;
